@@ -169,8 +169,9 @@
                     <div class="d-flex justify-content-between m-5 mt-12">
                         <h1 style = "border : none;">Alerts</h1>
                         <div>
-                            <button class="btn btn-success">Create New Gallery</button>
-                            <button class="btn btn-success">Create New Encrypted/Secure Gallery</button>
+                            <button class="btn btn-success">Share</button>
+                            <button class="btn btn-success">Forward</button>
+                            <button class="btn btn-success">Approve</button>
                         </div>
                     </div>
                 </div>
