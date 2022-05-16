@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#7C8390;stroke:#7C8390;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:#7C8390;stroke:#7C8390;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;}
+</style>
+<rect fill="#7C8390" x="4" y="4" class="st0" width="10" height="10"/>
+<rect fill="#7C8390" x="4" y="18" class="st0" width="10" height="10"/>
+<rect fill="#7C8390" x="18" y="4" class="st0" width="10" height="10"/>
+<rect fill="#7C8390" x="18" y="18" class="st0" width="10" height="10"/>
+</svg>

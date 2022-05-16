@@ -1,0 +1,77 @@
+//
+// Header mobile
+//
+
+// General mode
+.app-header-mobile {
+    @include app-layout-transition();   
+}
+
+// Desktop mode
+@include media-breakpoint-up(lg) {
+    // Base
+    .app-header-mobile {
+        display: none !important;
+    }   
+}
+
+// Tablet & mobile modes
+@include media-breakpoint-down(lg) {
+    // Base
+    .app-header-mobile {
+        display: flex;
+        align-items: stretch;
+
+        @include attr( z-index, $app-header-mobile-base-z-index);
+        @include attr( background-color, $app-header-mobile-base-bg-color);
+        @include attr( box-shadow, $app-header-mobile-base-box-shadow);
+        @include attr( border-bottom, $app-header-mobile-base-border-bottom);
+    }
+
+    // Vars
+    body {
+        --kt-app-header-mobile-height: #{$app-header-mobile-base-height};
+        --kt-app-header-mobile-height-actual: #{$app-header-mobile-base-height};
+    }
+
+    [data-kt-app-header-mobile-sticky="on"] {
+        --kt-app-header-mobile-height: #{$app-header-mobile-sticky-height};
+    }
+
+    [data-kt-app-header-mobile-minimize="on"] {
+        --kt-app-header-mobile-height: #{$app-header-mobile-minimize-height};
+    }
+
+    // States
+    .app-header-mobile {
+        height: var(--kt-app-header-mobile-height);
+
+        [data-kt-app-header-mobile-fixed="true"] & {
+            @include attr( z-index, $app-header-mobile-fixed-z-index);
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;            
+            @include app-layout-transition();
+        }
+
+        [data-kt-app-header-mobile-sticky="on"] & {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            @include attr( z-index, $app-header-mobile-sticky-z-index);
+            @include attr( background-color, $app-header-mobile-sticky-bg-color);
+            @include attr( box-shadow, $app-header-mobile-sticky-box-shadow);
+            @include attr( border-bottom, $app-header-mobile-sticky-border-bottom);
+        }
+
+        [data-kt-app-header-mobile-minimize="on"] & {
+            @include app-layout-transition();
+            @include attr( z-index, $app-header-mobile-minimize-z-index);
+            @include attr( background-color, $app-header-mobile-minimize-bg-color);
+            @include attr( box-shadow, $app-header-mobile-minimize-box-shadow);
+            @include attr( border-bottom, $app-header-mobile-minimize-border-bottom);
+        }
+    }
+}
