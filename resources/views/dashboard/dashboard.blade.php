@@ -231,7 +231,7 @@
             <div class="row">
                 <div class="col-12 col-md-7">
                     <div class="row mt-3">
-                        <div class="col-md-6">
+                        <!-- <div class="col-md-6">
                             <div class="total-matches out-line">
                                 <div class="d-flex justify-content-between">
                                     <a class="ft-general" href="{{ route('total-matches') }}">Total Matches</a>
@@ -255,6 +255,58 @@
                                     <p class="percent-stores-danger">4.19%</p>
                                 </div>
                                 <p class="ft-12">You lost $2,597.46 more than last month</p>
+                            </div>
+                        </div> -->
+                        <div class="col-md-3">
+                            <div class="total-matches out-line">
+                                <div class="d-flex justify-content-between">
+                                    <a class="ft-general" href="{{ route('total-matches') }}">Camera Streams</a>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="ft-25-b pl-5">324</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="total-matches out-line">
+                                <div class="d-flex justify-content-between">
+                                    <a class="ft-general" href="{{ route('total-matches') }}">Locations Online/Offline</a>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="ft-25-b pl-5">324/123</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="total-matches out-line">
+                                <div class="d-flex justify-content-between">
+                                    <a class="ft-general" href="{{ route('total-matches') }}">Map with locations Online/Offline</a>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="ft-25-b pl-5">324/234</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <div class="lost-revenue out-line green-out-line">
+                                <div class="d-flex justify-content-between">
+                                    <p class="ft-general">Services Online/Offline</p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="ft-25-b">324/125</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="lost-revenue out-line orange-out-line">
+                                <div class="d-flex justify-content-between">
+                                    <p class="ft-general">Errors</p>
+                                </div>
+                                <div class="d-flex">
+                                    <p class="ft-25-b">4161</p>
+                                </div>
                             </div>
                         </div>
                     </div>

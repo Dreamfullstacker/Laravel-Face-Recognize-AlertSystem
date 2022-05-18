@@ -179,7 +179,7 @@
                     <!--begin::Table container-->
                     <div class="table-responsive p-5">
                         <div class="d-flex justify-content-between">
-                            <h3>Gallery List</h3>
+                            <h3>Non-matched faces</h3>
                             <div>
                                 <img class="support-img m-5" src="images/source_img/search-svgrepo-com.svg" />
                                 <img class="support-img m-5" src="images/source_img/download-svg-icon-29.jpg" />
@@ -196,8 +196,10 @@
                                             <input class="form-check-input" type="checkbox" value="1" data-kt-check="true" data-kt-check-target=".widget-9-check" />
                                         </div>
                                     </th>
-                                    <th class="min-w-200px">Gallery Name</th>
-                                    <th class="min-w-150px">Enrolled Count</th>
+                                    <th class="min-w-200px">Face</th>
+                                    <th class="min-w-150px">Location ID</th>
+                                    <th class="min-w-200px">Camera ID</th>
+                                    <th class="min-w-200px">Date</th>
                                 </tr>
                             </thead>
                             <!--end::Table head-->
@@ -212,12 +214,18 @@
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <div class="d-flex justify-content-start flex-column">
-                                                <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">Ana Simmons</a>
+                                            <img class="identify_avatar" src="images/users/100_6.jpg" />
                                             </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <a href="#" class="text-dark fw-bolder text-hover-primary d-block fs-6">37</a>
+                                        16131437
+                                    </td>
+                                    <td>
+                                        3716541
+                                    </td>
+                                    <td>
+                                        2022/05/10
                                     </td>
                                 </tr>
                                 <tr>
@@ -229,12 +237,18 @@
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <div class="d-flex justify-content-start flex-column">
-                                                <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">Jessie Clarcson</a>
+                                            <img class="identify_avatar" src="images/users/100_12.jpg" />
                                             </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <a href="#" class="text-dark fw-bolder text-hover-primary d-block fs-6">45</a>
+                                        984343185
+                                    </td>
+                                    <td>
+                                        13443185
+                                    </td>
+                                    <td>
+                                        2022/05/13
                                     </td>
                                 </tr>
                                 

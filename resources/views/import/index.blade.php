@@ -169,8 +169,7 @@
                     <div class="d-flex justify-content-between m-5 mt-12">
                         <h1 style = "border : none;">Import</h1>
                         <div>
-                            <button class="btn btn-success">Create New Gallery</button>
-                            <button class="btn btn-success">Create New Encrypted/Secure Gallery</button>
+                            <button class="btn btn-success">Upload CCTV footage</button>
                         </div>
                     </div>
                 </div>
@@ -178,7 +177,7 @@
                     <!--begin::Table container-->
                     <div class="table-responsive p-5">
                         <div class="d-flex justify-content-between">
-                            <h3>Gallery List</h3>
+                            <h3>Detected faces associated with an identity</h3>
                             <div>
                                 <img class="support-img m-5" src="images/source_img/search-svgrepo-com.svg" />
                                 <img class="support-img m-5" src="images/source_img/download-svg-icon-29.jpg" />
@@ -195,8 +194,8 @@
                                             <input class="form-check-input" type="checkbox" value="1" data-kt-check="true" data-kt-check-target=".widget-9-check" />
                                         </div>
                                     </th>
-                                    <th class="min-w-200px">Gallery Name</th>
-                                    <th class="min-w-150px">Enrolled Count</th>
+                                    <th class="min-w-200px">Detected Faces</th>
+                                    <th class="min-w-150px">Associated Identify</th>
                                 </tr>
                             </thead>
                             <!--end::Table head-->
@@ -211,12 +210,12 @@
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <div class="d-flex justify-content-start flex-column">
-                                                <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">Ana Simmons</a>
+                                            <img class="identify_avatar" src="images/users/100_4.jpg" />
                                             </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <a href="#" class="text-dark fw-bolder text-hover-primary d-block fs-6">37</a>
+                                        <a href="#" class="text-dark fw-bolder text-hover-primary d-block fs-6">371251321</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -228,12 +227,12 @@
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <div class="d-flex justify-content-start flex-column">
-                                                <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">Jessie Clarcson</a>
+                                            <img class="identify_avatar" src="images/users/100_6.jpg" />
                                             </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <a href="#" class="text-dark fw-bolder text-hover-primary d-block fs-6">45</a>
+                                        <a href="#" class="text-dark fw-bolder text-hover-primary d-block fs-6">45654455331</a>
                                     </td>
                                 </tr>
                                 
