@@ -1,17 +1,30 @@
 @extends('layouts.dashboard_app')
 @section('styles')
 <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet" type="text/css">
-<!-- for line chart & rect area chart -->
-<link href="{{ asset('css/style.bundle.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ asset('css/rectchat.css') }}" rel="stylesheet" type="text/css">
 
 @endsection
 @section('content')
+<?php
+    // Table rows
+    $tableRows = array(
+        array(
+            'group_name' => 'A Group',
+        ),
+
+        array(
+            'group_name' => 'B Group',
+        ),
+
+        array(
+            'group_name' => 'C Group',
+        ),
+    );
+?>
 <div class="container" style="max-width: inherit;">
     <div class="row">
         
         <div class="col-12 col-md-4 col-xl-3">
-        <div class="navigation">
+            <div class="navigation">
                 <h4>Navigation</h4>
                 <ul>
                     <li>
@@ -203,105 +216,136 @@
                     </li>
                     <li>
                         <a href="{{ route('home') }}" class="nav-link" data-name="men_users">
-                            <div class="d-flex">
-                                <img class="support-img" src="images/source_img/comment.svg" />
+                            <div clamg class="support-img" src="images/source_img/comment.svg" />
                                 <p>Edit Profile</p>
                             </div>
                         </a>
-                    </li>
-                     -->
+                    </li>-->
                 </ul>
             </div>
         </div>
         <div class="col-12 col-md-8 col-xl-9">
-            <div class="row">
+            <div class="row mx-2 out-line">
                 <div class="col-12 col-md-12 p-0">
-                    <div class="d-flex justify-content-between m-5 mt-12">
-                        <h1 style = "border : none;">Galleries</h1>
+                    <div class="d-flex justify-content-between p-3">
+                        <h1 style = "border : none;">Users Group</h1>
                         <div>
-                            <button class="btn btn-success">Create New Gallery</button>
-                            <button class="btn btn-success">Create New Encrypted/Secure Gallery</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="navigation col-12 col-md-12">
-                    <!--begin::Table container-->
-                    <div class="table-responsive p-5">
-                        <div class="d-flex justify-content-between">
-                            <h3>Gallery List</h3>
-                            <div>
-                                <img class="support-img m-5" src="images/source_img/search-svgrepo-com.svg" />
-                                <img class="support-img m-5" src="images/source_img/download-svg-icon-29.jpg" />
-                                <img class="support-img m-5" src="images/source_img/print-black-printer-tool-symbol_icon-icons.com_54467.svg" />
+                            <button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#kt_modal_1">Add New User Group</button>
+                            <div class="modal fade" tabindex="-1" id="kt_modal_1">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Add New User Group</h5>
+
+                                            <!--begin::Close-->
+                                            <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                                                <span class="svg-icon svg-icon-2x"></span>
+                                            </div>
+                                            <!--end::Close-->
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <div class="d-flex justify-content-center">
+                                                <div class="symbol symbol-circle symbol-25px">
+                                                    <img src="images/source_img/users.svg" alt="img" class="img-circle" style="width : 80px">
+                                                </div> 
+                                            </div>
+                                            <div class="mb-10">
+                                                <label for="exampleFormControlInput1" class="required form-label">Group Name</label>
+                                                <input type="text" class="form-control form-control-solid" placeholder="Insert user name please..."/>
+                                            </div>
+                                            <div class="row pt-3">
+                                                <div class="col-3">
+                                                    <div class="form-check form-check-custom form-check-solid">
+                                                        <input class="form-check-input" type="checkbox" value="" id="Anna"/>
+                                                        <label class="form-check-label" for="Anna">
+                                                            <img src="images/users/100_4.jpg" alt="img" class="img-circle" style="width : 50px">
+                                                            Anna
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-check form-check-custom form-check-solid">
+                                                        <input class="form-check-input" type="checkbox" value="" id="Boris"/>
+                                                        <label class="form-check-label" for="Boris">
+                                                            <img src="images/users/100_6.jpg" alt="img" class="img-circle" style="width : 50px">
+                                                            Boris
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-check form-check-custom form-check-solid">
+                                                        <input class="form-check-input" type="checkbox" value="" id="Anton"/>
+                                                        <label class="form-check-label" for="Anton">
+                                                            <img src="images/users/100_12.jpg" alt="img" class="img-circle" style="width : 50px">
+                                                            Anton
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-check form-check-custom form-check-solid">
+                                                        <input class="form-check-input" type="checkbox" value="" id="James"/>
+                                                        <label class="form-check-label" for="James">
+                                                            <img src="images/users/100_10.jfif" alt="img" class="img-circle" style="width : 50px; height : 50px">
+                                                            James
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                                            <button type="button" class="btn btn-primary">Add</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <!--begin::Table-->
-                        <table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
-                            <!--begin::Table head-->
-                            <thead>
-                                <tr class="fw-bolder text-muted">
-                                    <th class="w-25px">
-                                        <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="1" data-kt-check="true" data-kt-check-target=".widget-9-check" />
-                                        </div>
-                                    </th>
-                                    <th class="min-w-200px">Gallery Name</th>
-                                    <th class="min-w-150px">Enrolled Count</th>
-                                </tr>
-                            </thead>
-                            <!--end::Table head-->
-                            <!--begin::Table body-->
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input widget-9-check" type="checkbox" value="1" />
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="d-flex justify-content-start flex-column">
-                                                <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">Ana Simmons</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="text-dark fw-bolder text-hover-primary d-block fs-6">37</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input widget-9-check" type="checkbox" value="1" />
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="d-flex justify-content-start flex-column">
-                                                <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">Jessie Clarcson</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="text-dark fw-bolder text-hover-primary d-block fs-6">45</a>
-                                    </td>
-                                </tr>
-                                
-                            </tbody>
-                            <!--end::Table body-->
-                        </table>
-                        <!--end::Table-->
                     </div>
-                    <!--end::Table container-->
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-7">
-                    
-                </div>
-                <div class="col-12 col-md-5">
-                    
-                </div>
+                <!--begin::Table-->
+                <table class="table align-middle gs-0 gy-4">
+                    <!--begin::Table head-->
+                    <thead>
+                        <tr class="fw-bolder text-muted bg-light">
+                            <th></th>
+                            <th class="w-25px">User Group Name</th>
+                            <th class="min-w-200px text-end rounded-end">Action</th>
+                        </tr>
+                    </thead>
+                    <!--end::Table head-->
+
+                    <!--begin::Table body-->
+                    <tbody>
+                        @foreach($tableRows as $row)
+                        <tr>
+                            <td>
+                                <img src="images/source_img/users.svg" class="h-50 align-self-center" style="width: 40px;" alt=""/>
+                            </td>
+                            <td>
+                                <a href="#" class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6">{{ $row['group_name'] }}</a>
+                            </td>
+                            <td class="text-end">
+                                <a href="#" class="btn px-4 me-2">
+                                    <span class="btn btn-danger">
+                                        Delete
+                                    </span>
+                                </a>
+                                <a href="#" class="btn px-4 me-2">
+                                    <span class="btn btn-primary">
+                                        Edit
+                                    </span>
+                                </a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                    <!--end::Table body-->
+
+                </table>
+                <!--end::Table-->
             </div>
         </div>
     </div>
@@ -309,9 +353,6 @@
 @endsection
 
 @section('scripts_extend')
-<script type="text/javascript" src="{{ asset('js/dashboard.js') }}"></script>
-<!-- for google map -->
-<script type="text/javascript" src="https://maps.google.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&callback=initMap" ></script>
 <!-- for line & curve chat -->
 <script type="text/javascript" src="{{ asset('js/plugins.bundle.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/scripts.bundle.js') }}"></script>

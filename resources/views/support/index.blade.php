@@ -1,9 +1,7 @@
 @extends('layouts.dashboard_app')
 @section('styles')
+<link href="{{ asset('css/support.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet" type="text/css">
-<!-- for line chart & rect area chart -->
-<link href="{{ asset('css/style.bundle.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ asset('css/rectchat.css') }}" rel="stylesheet" type="text/css">
 
 @endsection
 @section('content')
@@ -11,7 +9,7 @@
     <div class="row">
         
         <div class="col-12 col-md-4 col-xl-3">
-        <div class="navigation">
+            <div class="navigation">
                 <h4>Navigation</h4>
                 <ul>
                     <li>
@@ -214,94 +212,99 @@
             </div>
         </div>
         <div class="col-12 col-md-8 col-xl-9">
-            <div class="row">
-                <div class="col-12 col-md-12 p-0">
-                    <div class="d-flex justify-content-between m-5 mt-12">
-                        <h1 style = "border : none;">Galleries</h1>
-                        <div>
-                            <button class="btn btn-success">Create New Gallery</button>
-                            <button class="btn btn-success">Create New Encrypted/Secure Gallery</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="navigation col-12 col-md-12">
-                    <!--begin::Table container-->
-                    <div class="table-responsive p-5">
-                        <div class="d-flex justify-content-between">
-                            <h3>Gallery List</h3>
-                            <div>
-                                <img class="support-img m-5" src="images/source_img/search-svgrepo-com.svg" />
-                                <img class="support-img m-5" src="images/source_img/download-svg-icon-29.jpg" />
-                                <img class="support-img m-5" src="images/source_img/print-black-printer-tool-symbol_icon-icons.com_54467.svg" />
+            <div class="row m-0 p-0 mx-1 out-line">
+            <div class="navigation border-none" style="width : 100%">
+                <h4>Support</h4>
+                <div class="tab" role="tabpanel">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#support_ticket" aria-controls="home" role="tab" data-toggle="tab">Raise a Support Ticket</a></li>
+                        <li role="presentation"><a href="#error_log" aria-controls="profile" role="tab" data-toggle="tab">Error Logs</a></li>
+                        <li role="presentation"><a href="#audit_trail" aria-controls="profile" role="tab" data-toggle="tab">Audit Trail</a></li>
+                        <li role="presentation"><a href="#faq" aria-controls="profile" role="tab" data-toggle="tab">FAQs</a></li>
+                        <li role="presentation"><a href="#tool" aria-controls="profile" role="tab" data-toggle="tab">Tool</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content tabs">
+                        <div role="tabpanel" class="tab-pane fade in active show" id="support_ticket">
+                            <div class="row d-flex justify-content-between">
+                                <div class="col-md-2 ticket ml-5 py-5">
+                                    <p class="ft-20 text-center">Basic</p>
+                                    <p class="ft-25-b text-center py-5">$</p>
+                                    <div class="d-flex justify-content-center">
+                                        <button class="btn btn-success">Downgrade</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 ticket py-5">
+                                    <p class="ft-20 text-center">Plus</p>
+                                    <p class="ft-25-b text-center py-5">$</p>
+                                    <div class="d-flex justify-content-center">
+                                        <button class="btn btn-primary">Current</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 ticket py-5">
+                                    <p class="ft-20 text-center">Professional</p>
+                                    <p class="ft-25-b text-center py-5">$</p>
+                                    <div class="d-flex justify-content-center">
+                                        <button class="btn btn-success">Upgrade</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-2 ticket mr-5 py-5">
+                                    <p class="ft-20 text-center">Premier</p>
+                                    <p class="ft-25-b text-center py-5">$</p>
+                                    <div class="d-flex justify-content-center">
+                                        <button class="btn btn-success">Upgrade</button>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-                        <!--begin::Table-->
-                        <table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
-                            <!--begin::Table head-->
-                            <thead>
-                                <tr class="fw-bolder text-muted">
-                                    <th class="w-25px">
-                                        <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="1" data-kt-check="true" data-kt-check-target=".widget-9-check" />
-                                        </div>
-                                    </th>
-                                    <th class="min-w-200px">Gallery Name</th>
-                                    <th class="min-w-150px">Enrolled Count</th>
-                                </tr>
-                            </thead>
-                            <!--end::Table head-->
-                            <!--begin::Table body-->
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input widget-9-check" type="checkbox" value="1" />
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="d-flex justify-content-start flex-column">
-                                                <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">Ana Simmons</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="text-dark fw-bolder text-hover-primary d-block fs-6">37</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input widget-9-check" type="checkbox" value="1" />
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="d-flex justify-content-start flex-column">
-                                                <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">Jessie Clarcson</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="text-dark fw-bolder text-hover-primary d-block fs-6">45</a>
-                                    </td>
-                                </tr>
-                                
-                            </tbody>
-                            <!--end::Table body-->
-                        </table>
-                        <!--end::Table-->
+                        <div role="tabpanel" class="tab-pane fade" id="error_log">
+                            
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="audit_trail">
+                            
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="faq">
+                            <button class="accordion">Section 1</button>
+                            <div class="panel">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+
+                            <button class="accordion">Section 2</button>
+                            <div class="panel">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+
+                            <button class="accordion">Section 3</button>
+                            <div class="panel">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="tool">
+                            <div class="text-center">
+                                <h4>Calculator for hardware</h4>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-12 col-lg-4 col-md-6 col-sm-12">
+                                    <div class="mb-10">
+                                        <label for="exampleFormControlInput1" class="required form-label">Camera Height</label>
+                                        <input type="text" class="form-control form-control-solid" />
+                                    </div>
+                                    <div class="mb-10">
+                                        <label for="exampleFormControlInput1" class="required form-label">Camera Distance</label>
+                                        <input type="text" class="form-control form-control-solid" />
+                                    </div>
+                                    <div class="mb-10">
+                                        <label for="exampleFormControlInput1" class="required form-label">Camera Angle</label>
+                                        <input type="text" class="form-control form-control-solid" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <!--end::Table container-->
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 col-md-7">
-                    
-                </div>
-                <div class="col-12 col-md-5">
-                    
-                </div>
             </div>
         </div>
     </div>
@@ -309,14 +312,29 @@
 @endsection
 
 @section('scripts_extend')
-<script type="text/javascript" src="{{ asset('js/dashboard.js') }}"></script>
-<!-- for google map -->
-<script type="text/javascript" src="https://maps.google.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&callback=initMap" ></script>
 <!-- for line & curve chat -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
 <script type="text/javascript" src="{{ asset('js/plugins.bundle.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/scripts.bundle.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/widgets.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/linechat_chartjs.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/curvechat_chartjs.js')}}"></script>
-<script type="text/javascript" src="{{ asset('js/rectchat_chartjs.js')}}"></script>
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    for (i = 0; i < acc.length; i++) {
+        console.log(acc);
+    acc[i].addEventListener("click", myFunction);
+    }
+    function myFunction() {
+        console.log("acc");
+
+this.classList.toggle("accordionactive");
+var panel = this.nextElementSibling;
+if (panel.style.maxHeight) {
+panel.style.maxHeight = null;
+} else {
+panel.style.maxHeight = panel.scrollHeight + "px";
+} 
+}
+</script>
 @endsection

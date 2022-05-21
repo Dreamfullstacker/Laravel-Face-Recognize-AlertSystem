@@ -1,9 +1,7 @@
 @extends('layouts.dashboard_app')
 @section('styles')
+<link href="{{ asset('css/permission.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet" type="text/css">
-<!-- for line chart & rect area chart -->
-<link href="{{ asset('css/style.bundle.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ asset('css/rectchat.css') }}" rel="stylesheet" type="text/css">
 
 @endsection
 @section('content')
@@ -11,7 +9,7 @@
     <div class="row">
         
         <div class="col-12 col-md-4 col-xl-3">
-        <div class="navigation">
+            <div class="navigation">
                 <h4>Navigation</h4>
                 <ul>
                     <li>
@@ -214,94 +212,84 @@
             </div>
         </div>
         <div class="col-12 col-md-8 col-xl-9">
-            <div class="row">
-                <div class="col-12 col-md-12 p-0">
-                    <div class="d-flex justify-content-between m-5 mt-12">
-                        <h1 style = "border : none;">Galleries</h1>
-                        <div>
-                            <button class="btn btn-success">Create New Gallery</button>
-                            <button class="btn btn-success">Create New Encrypted/Secure Gallery</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="navigation col-12 col-md-12">
-                    <!--begin::Table container-->
-                    <div class="table-responsive p-5">
-                        <div class="d-flex justify-content-between">
-                            <h3>Gallery List</h3>
-                            <div>
-                                <img class="support-img m-5" src="images/source_img/search-svgrepo-com.svg" />
-                                <img class="support-img m-5" src="images/source_img/download-svg-icon-29.jpg" />
-                                <img class="support-img m-5" src="images/source_img/print-black-printer-tool-symbol_icon-icons.com_54467.svg" />
+            <div class="row m-0 p-0 mx-1 out-line">
+            <div class="navigation border-none" style="width : 100%">
+                <h4>Permission</h4>
+                <div class="tab" role="tabpanel">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#admin" aria-controls="home" role="tab" data-toggle="tab">Admin</a></li>
+                        <li role="presentation"><a href="#supervisor" aria-controls="profile" role="tab" data-toggle="tab">Supervisor</a></li>
+                        <li role="presentation"><a href="#normal_user" aria-controls="profile" role="tab" data-toggle="tab">Secure / Non-Secure user</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content tabs">
+                        <div role="tabpanel" class="tab-pane fade in active show" id="admin">
+                            <div class="text-center">
+                                <h4>Admin Permission</h4>
+                            </div>
+                            <div class="form-check form-check-custom form-check-solid">
+                                <input class="form-check-input" type="checkbox" value="" id="createUser"/>
+                                <label class="form-check-label" for="createUser">
+                                    Create User
+                                </label>
+                            </div>
+                            <div class="form-check form-check-custom form-check-solid">
+                                <input class="form-check-input" type="checkbox" value="" id="createUserGroup"/>
+                                <label class="form-check-label" for="createUserGroup">
+                                    Create User Group
+                                </label>
+                            </div>
+                            <div class="form-check form-check-custom form-check-solid">
+                                <input class="form-check-input" type="checkbox" value="" id="createGallary"/>
+                                <label class="form-check-label" for="createGallary">
+                                    Create User Galleries
+                                </label>
                             </div>
                         </div>
-                        <!--begin::Table-->
-                        <table class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
-                            <!--begin::Table head-->
-                            <thead>
-                                <tr class="fw-bolder text-muted">
-                                    <th class="w-25px">
-                                        <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="1" data-kt-check="true" data-kt-check-target=".widget-9-check" />
-                                        </div>
-                                    </th>
-                                    <th class="min-w-200px">Gallery Name</th>
-                                    <th class="min-w-150px">Enrolled Count</th>
-                                </tr>
-                            </thead>
-                            <!--end::Table head-->
-                            <!--begin::Table body-->
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input widget-9-check" type="checkbox" value="1" />
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="d-flex justify-content-start flex-column">
-                                                <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">Ana Simmons</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="text-dark fw-bolder text-hover-primary d-block fs-6">37</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input widget-9-check" type="checkbox" value="1" />
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="d-flex justify-content-start flex-column">
-                                                <a href="#" class="text-dark fw-bolder text-hover-primary fs-6">Jessie Clarcson</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="text-dark fw-bolder text-hover-primary d-block fs-6">45</a>
-                                    </td>
-                                </tr>
-                                
-                            </tbody>
-                            <!--end::Table body-->
-                        </table>
-                        <!--end::Table-->
+                        <div role="tabpanel" class="tab-pane fade" id="supervisor">
+                            <div class="text-center">
+                                <h4>Supervisor Permission</h4>
+                            </div>
+                            <div class="form-check form-check-custom form-check-solid">
+                                <input class="form-check-input" type="checkbox" value="" id="approve"/>
+                                <label class="form-check-label" for="approve">
+                                    Approve enrolment
+                                </label>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="normal_user">
+                            <div class="text-center">
+                                <h4>Secure / Non-Secure User Permission</h4>
+                            </div>
+                            <div class="form-check form-check-custom form-check-solid">
+                                <input class="form-check-input" type="checkbox" value="" id="receiveUpdates"/>
+                                <label class="form-check-label" for="receiveUpdates">
+                                    Receive updates
+                                </label>
+                            </div>
+                            <div class="form-check form-check-custom form-check-solid">
+                                <input class="form-check-input" type="checkbox" value="" id="createIdentity"/>
+                                <label class="form-check-label" for="createIdentity">
+                                    Create identities
+                                </label>
+                            </div>
+                            <div class="form-check form-check-custom form-check-solid">
+                                <input class="form-check-input" type="checkbox" value="" id="uploadImage"/>
+                                <label class="form-check-label" for="uploadImage">
+                                    Upload image/video of an identity
+                                </label>
+                            </div>
+                            <div class="form-check form-check-custom form-check-solid">
+                                <input class="form-check-input" type="checkbox" value="" id="addLicense"/>
+                                <label class="form-check-label" for="addLicense">
+                                    Add license plate
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                    <!--end::Table container-->
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 col-md-7">
-                    
-                </div>
-                <div class="col-12 col-md-5">
-                    
-                </div>
             </div>
         </div>
     </div>
@@ -309,14 +297,10 @@
 @endsection
 
 @section('scripts_extend')
-<script type="text/javascript" src="{{ asset('js/dashboard.js') }}"></script>
-<!-- for google map -->
-<script type="text/javascript" src="https://maps.google.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&callback=initMap" ></script>
 <!-- for line & curve chat -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
 <script type="text/javascript" src="{{ asset('js/plugins.bundle.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/scripts.bundle.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/widgets.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/linechat_chartjs.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/curvechat_chartjs.js')}}"></script>
-<script type="text/javascript" src="{{ asset('js/rectchat_chartjs.js')}}"></script>
 @endsection

@@ -8,7 +8,7 @@
 <div class="container" style="max-width: inherit;">
     <div class="row">   
         <div class="col-12 col-md-4 col-xl-3">
-            <div class="navigation">
+        <div class="navigation">
                 <h4>Navigation</h4>
                 <ul>
                     <li>
@@ -50,7 +50,7 @@
                     <li>
                         <a href="{{ route('import') }}" class="nav-link" data-name="men_users">
                             <div class="d-flex">
-                                <img class="support-img" src="images/source_img/exchange.svg" />
+                                <img class="support-img" src="images/source_img/import.svg" />
                                 <p>Import</p>
                             </div>
                             <img class="support-img" src="images/source_img/comment.svg" />
@@ -59,7 +59,7 @@
                     <li>
                         <a href="{{ route('location') }}" class="nav-link" data-name="men_users">
                             <div class="d-flex">
-                                <img class="support-img" src="images/source_img/exchange.svg" />
+                                <img class="support-img" src="images/source_img/location.svg" />
                                 <p>Locations</p>
                             </div>
                             <img class="support-img" src="images/source_img/comment.svg" />
@@ -68,11 +68,72 @@
                     <li>
                         <a href="{{ route('alert') }}" class="nav-link" data-name="men_users">
                             <div class="d-flex">
-                                <img class="support-img" src="images/source_img/exchange.svg" />
+                                <img class="support-img" src="images/source_img/alert.svg" />
                                 <p>Alerts</p>
                             </div>
                             <img class="support-img" src="images/source_img/comment.svg" />
                         </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link" data-name="men_users">
+                            <div class="d-flex">
+                                <img class="support-img" src="images/source_img/setting-svgrepo-com.svg" />
+                                <p>Setting</p>
+                            </div>
+                            <img class="support-img" src="images/source_img/comment.svg" />
+                        </a>
+                    </li>
+                    <li class="ml-5">
+                        <a href="{{ route('user') }}" class="nav-link" data-name="men_users">
+                            <div class="d-flex">
+                                <img class="support-img" src="images/source_img/user.svg" />
+                                <p>User</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ml-5">
+                        <a href="{{ route('user_group') }}" class="nav-link" data-name="men_users">
+                            <div class="d-flex">
+                                <img class="support-img" src="images/source_img/users.svg" />
+                                <p>Group of Users</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ml-5">
+                        <a href="{{ route('permission') }}" class="nav-link" data-name="men_users">
+                            <div class="d-flex">
+                                <img class="support-img" src="images/source_img/user_permission.svg" />
+                                <p>Access Permissions</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ml-5">
+                        <a href="{{ route('configuration') }}" class="nav-link" data-name="men_users">
+                            <div class="d-flex">
+                                <img class="support-img" src="images/source_img/configuration.png" />
+                                <p>Configuration</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('support') }}" class="nav-link" data-name="men_users">
+                            <div class="d-flex">
+                                <img class="support-img" src="images/source_img/support.jpg" />
+                                <p>Support</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" data-name="men_users" onclick="document.getElementById('logout-form').submit(); event.preventDefault();">
+                            <div class="d-flex">
+                                <img class="support-img" src="images/source_img/sign-out.svg" />
+                                <p>Sign out</p>
+                            </div>
+                        </a>
+                        
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
                     </li>
                     <!-- <li>
                         <a href="{{ route('home') }}" class="nav-link" data-name="men_users">
@@ -83,7 +144,7 @@
                             <img class="support-img" src="images/source_img/three-line.svg" />
                         </a>
                     </li> -->
-                    <li>
+                    <!-- <li>
                         <a href="{{ route('stores') }}" class="nav-link" data-name="men_users">
                             <div class="d-flex">
                                 <img class="support-img" src="images/source_img/shopping-basket.svg" />
@@ -91,8 +152,8 @@
                             </div>
                             <img class="support-img" src="images/source_img/comment.svg" />
                         </a>
-                    </li>
-                    <li>
+                    </li> -->
+                    <!-- <li>
                         <a href="{{ route('poi') }}" class="nav-link" data-name="men_users">
                             <div class="d-flex">
                                 <img class="support-img" src="images/source_img/users.svg" />
@@ -145,18 +206,7 @@
                             </div>
                         </a>
                     </li>
-                    <li>
-                        <a class="nav-link" data-name="men_users" onclick="document.getElementById('logout-form').submit(); event.preventDefault();">
-                            <div class="d-flex">
-                                <img class="support-img" src="images/source_img/sign-out.svg" />
-                                <p>Sign out</p>
-                            </div>
-                        </a>
-                        
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </li>
+                     -->
                 </ul>
             </div>
         </div>

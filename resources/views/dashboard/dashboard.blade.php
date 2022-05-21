@@ -1,6 +1,7 @@
 @extends('layouts.dashboard_app')
 @section('styles')
 <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('css/jsuites.css') }}" rel="stylesheet" type="text/css">
 <!-- for line chart & rect area chart -->
 <link href="{{ asset('css/style.bundle.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('css/rectchat.css') }}" rel="stylesheet" type="text/css">
@@ -53,7 +54,7 @@
                     <li>
                         <a href="{{ route('import') }}" class="nav-link" data-name="men_users">
                             <div class="d-flex">
-                                <img class="support-img" src="images/source_img/exchange.svg" />
+                                <img class="support-img" src="images/source_img/import.svg" />
                                 <p>Import</p>
                             </div>
                             <img class="support-img" src="images/source_img/comment.svg" />
@@ -62,7 +63,7 @@
                     <li>
                         <a href="{{ route('location') }}" class="nav-link" data-name="men_users">
                             <div class="d-flex">
-                                <img class="support-img" src="images/source_img/exchange.svg" />
+                                <img class="support-img" src="images/source_img/location.svg" />
                                 <p>Locations</p>
                             </div>
                             <img class="support-img" src="images/source_img/comment.svg" />
@@ -71,7 +72,7 @@
                     <li>
                         <a href="{{ route('alert') }}" class="nav-link" data-name="men_users">
                             <div class="d-flex">
-                                <img class="support-img" src="images/source_img/exchange.svg" />
+                                <img class="support-img" src="images/source_img/alert.svg" />
                                 <p>Alerts</p>
                             </div>
                             <img class="support-img" src="images/source_img/comment.svg" />
@@ -118,6 +119,26 @@
                             </div>
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('support') }}" class="nav-link" data-name="men_users">
+                            <div class="d-flex">
+                                <img class="support-img" src="images/source_img/support.jpg" />
+                                <p>Support</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" data-name="men_users" onclick="document.getElementById('logout-form').submit(); event.preventDefault();">
+                            <div class="d-flex">
+                                <img class="support-img" src="images/source_img/sign-out.svg" />
+                                <p>Sign out</p>
+                            </div>
+                        </a>
+                        
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
                     <!-- <li>
                         <a href="{{ route('home') }}" class="nav-link" data-name="men_users">
                             <div class="d-flex">
@@ -136,7 +157,7 @@
                             <img class="support-img" src="images/source_img/comment.svg" />
                         </a>
                     </li> -->
-                    <li>
+                    <!-- <li>
                         <a href="{{ route('poi') }}" class="nav-link" data-name="men_users">
                             <div class="d-flex">
                                 <img class="support-img" src="images/source_img/users.svg" />
@@ -189,18 +210,7 @@
                             </div>
                         </a>
                     </li>
-                    <li>
-                        <a class="nav-link" data-name="men_users" onclick="document.getElementById('logout-form').submit(); event.preventDefault();">
-                            <div class="d-flex">
-                                <img class="support-img" src="images/source_img/sign-out.svg" />
-                                <p>Sign out</p>
-                            </div>
-                        </a>
-                        
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </li>
+                     -->
                 </ul>
             </div>
         </div>
@@ -408,7 +418,7 @@
                     <div class="verbal-abuse out-line">
                         <div class="d-flex justify-content-between">
                             <div class="d-flex align-items-center">
-                                <p class="jeng-zhi">#</p>
+                                <img class="dashboard_mainIcon" src="images/source_img/icon_face_recognition.svg">
                                 <div class="ml-2">
                                     <p class="ft-20">Faces Processed</p>
                                 </div>
@@ -418,11 +428,144 @@
                                     <button class="dropbtn1" style="border-left: 1px solid black;" > <img class="support-img" src="images/source_img/search.svg" /> Select Date <img class="support-img" src="images/source_img/arrow-bottom.svg" /></button>
                                     <div class="dropdown-content1">
                                         <a href="#" onclick="select_face_date(1)">last 24 hour</a>
-                                        <a href="#">last 7 days</a>
-                                        <a href="#">last calendar week</a>
-                                        <a href="#">last 30 days</a>
-                                        <a href="#">last calendar month</a>
-                                        <a href="#">select start/end dates</a>
+                                        <a href="#" onclick="select_face_date(2)">last 7 days</a>
+                                        <a href="#" onclick="select_face_date(3)">last calendar week</a>
+                                        <a href="#" onclick="select_face_date(4)">last 30 days</a>
+                                        <a href="#" onclick="select_face_date(5)">last calendar month</a>
+                                        <a href="#" onclick="select_face_date(6)">select start/end dates</a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div id="show_datepicker" style="display : none;">
+                            <div class="row d-flex justify-content-between">
+                                <div class="col-3 mx-5">
+                                    <p class="ft-20 text-center">From</p>
+                                    <div id='calendarfrom' class=""></div>
+                                </div>
+                                <div class="col-3 mx-5">
+                                    <p class="ft-20 text-center">To</p>
+                                    <div id='calendarto' class="col-3 mx-5"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="example-box mt-5">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="d-flex flex-column align-items-start">
+                                        <img src="images/source_img/one-example.png" style="width: 100%;" class="pb-5"/>
+                                        <p class="live-p3" > <img src="images/source_img/location.png" class="list_location_icon mr-3"/>Knutsford store</p>
+                                        <p class="live-p4" > <img src="images/source_img/security-camera-48.png" class="list_camera_icon mr-3"/>Entrance camera 1 </p>
+                                        <p class="live-p5" > <img src="images/source_img/fire1.svg" class="list_fire_icon mr-3"/>Match confidence </p>
+                                        <p class="live-p6" > <img src="images/source_img/calender.png" class="list_calender_icon mr-3"/>Date 2022/01/23</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="d-flex flex-column align-items-start">
+                                        <img src="images/source_img/one-example.png" style="width: 100%;" class="pb-5"/>
+                                        <p class="live-p3" > <img src="images/source_img/location.png" class="list_location_icon mr-3"/>Knutsford store</p>
+                                        <p class="live-p4" > <img src="images/source_img/security-camera-48.png" class="list_camera_icon mr-3"/>Entrance camera 2 </p>
+                                        <p class="live-p5" > <img src="images/source_img/fire1.svg" class="list_fire_icon mr-3"/>Match confidence </p>
+                                        <p class="live-p6" > <img src="images/source_img/calender.png" class="list_calender_icon mr-3"/>Date </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="d-flex flex-column align-items-start">
+                                        <img src="images/source_img/one-example.png" style="width: 100%;" class="pb-5"/>
+                                        <p class="live-p3" > <img src="images/source_img/location.png" class="list_location_icon mr-3"/>Knutsford store</p>
+                                        <p class="live-p4" > <img src="images/source_img/security-camera-48.png" class="list_camera_icon mr-3"/>Entrance camera 3 </p>
+                                        <p class="live-p5" > <img src="images/source_img/fire1.svg" class="list_fire_icon mr-3"/>Match confidence </p>
+                                        <p class="live-p6" > <img src="images/source_img/calender.png" class="list_calender_icon mr-3"/>Date </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="d-flex flex-column align-items-start">
+                                        <img src="images/source_img/one-example.png" style="width: 100%;" class="pb-5"/>
+                                        <p class="live-p3" > <img src="images/source_img/location.png" class="list_location_icon mr-3"/>Knutsford store</p>
+                                        <p class="live-p4" > <img src="images/source_img/security-camera-48.png" class="list_camera_icon mr-3"/>Entrance camera 4 </p>
+                                        <p class="live-p5" > <img src="images/source_img/fire1.svg" class="list_fire_icon mr-3"/>Match confidence </p>
+                                        <p class="live-p6" > <img src="images/source_img/calender.png" class="list_calender_icon mr-3"/>Date </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <div class="verbal-abuse out-line">
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <img class="dashboard_mainIcon" src="images/source_img/error.jpg">
+                                <div class="ml-2">
+                                    <p class="ft-20">Errors</p>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="dropdown1">
+                                    <button class="dropbtn1" style="border-left: 1px solid black;" > <img class="support-img" src="images/source_img/search.svg" /> Select Date <img class="support-img" src="images/source_img/arrow-bottom.svg" /></button>
+                                    <div class="dropdown-content1">
+                                        <a href="#" onclick="select_alert_date(1)">last 24 hour</a>
+                                        <a href="#" onclick="select_alert_date(2)">last 7 days</a>
+                                        <a href="#" onclick="select_alert_date(3)">last calendar week</a>
+                                        <a href="#" onclick="select_alert_date(4)">last 30 days</a>
+                                        <a href="#" onclick="select_alert_date(5)">last calendar month</a>
+                                        <a href="#" onclick="select_alert_date(6)">select start/end dates</a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div id="show_alert_datepicker" style="display : none;">
+                            <div class="row d-flex justify-content-between">
+                                <div class="col-3 mx-5">
+                                    <p class="ft-20 text-center">From</p>
+                                    <div id='calendarfromAlert' class=""></div>
+                                </div>
+                                <div class="col-3 mx-5">
+                                    <p class="ft-20 text-center">To</p>
+                                    <div id='calendartoAlert' class="col-3 mx-5"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="example-box mt-5">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="d-flex flex-column align-items-start">
+                                        <img src="images/source_img/one-example.png" style="width: 100%;" class="pb-5"/>
+                                        <p class="live-p3" > <img src="images/source_img/location.png" class="list_location_icon mr-3"/>Knutsford store</p>
+                                        <p class="live-p4" > <img src="images/source_img/security-camera-48.png" class="list_camera_icon mr-3"/>Entrance camera 1 </p>
+                                        <p class="live-p5" > <img src="images/source_img/fire1.svg" class="list_fire_icon mr-3"/>Match confidence </p>
+                                        <p class="live-p6" > <img src="images/source_img/calender.png" class="list_calender_icon mr-3"/>Date 2022/01/23</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="d-flex flex-column align-items-start">
+                                        <img src="images/source_img/one-example.png" style="width: 100%;" class="pb-5"/>
+                                        <p class="live-p3" > <img src="images/source_img/location.png" class="list_location_icon mr-3"/>Knutsford store</p>
+                                        <p class="live-p4" > <img src="images/source_img/security-camera-48.png" class="list_camera_icon mr-3"/>Entrance camera 2 </p>
+                                        <p class="live-p5" > <img src="images/source_img/fire1.svg" class="list_fire_icon mr-3"/>Match confidence </p>
+                                        <p class="live-p6" > <img src="images/source_img/calender.png" class="list_calender_icon mr-3"/>Date </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="d-flex flex-column align-items-start">
+                                        <img src="images/source_img/one-example.png" style="width: 100%;" class="pb-5"/>
+                                        <p class="live-p3" > <img src="images/source_img/location.png" class="list_location_icon mr-3"/>Knutsford store</p>
+                                        <p class="live-p4" > <img src="images/source_img/security-camera-48.png" class="list_camera_icon mr-3"/>Entrance camera 3 </p>
+                                        <p class="live-p5" > <img src="images/source_img/fire1.svg" class="list_fire_icon mr-3"/>Match confidence </p>
+                                        <p class="live-p6" > <img src="images/source_img/calender.png" class="list_calender_icon mr-3"/>Date </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="d-flex flex-column align-items-start">
+                                        <img src="images/source_img/one-example.png" style="width: 100%;" class="pb-5"/>
+                                        <p class="live-p3" > <img src="images/source_img/location.png" class="list_location_icon mr-3"/>Knutsford store</p>
+                                        <p class="live-p4" > <img src="images/source_img/security-camera-48.png" class="list_camera_icon mr-3"/>Entrance camera 4 </p>
+                                        <p class="live-p5" > <img src="images/source_img/fire1.svg" class="list_fire_icon mr-3"/>Match confidence </p>
+                                        <p class="live-p6" > <img src="images/source_img/calender.png" class="list_calender_icon mr-3"/>Date </p>
                                     </div>
                                 </div>
                             </div>
@@ -446,4 +589,20 @@
 <script type="text/javascript" src="{{ asset('js/linechat_chartjs.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/curvechat_chartjs.js')}}"></script>
 <script type="text/javascript" src="{{ asset('js/rectchat_chartjs.js')}}"></script>
+<script type="text/javascript" src="{{ asset('js/jsuites.js')}}"></script>
+<!-- <script type="text/javascript" src="{{ asset('js/jsuites.js')}}"></script> -->
+<script>
+jSuites.calendar(document.getElementById('calendarfrom'), {
+    format: 'YYYY-MM-DD',
+});
+jSuites.calendar(document.getElementById('calendarto'), {
+    format: 'YYYY-MM-DD',
+});
+jSuites.calendar(document.getElementById('calendarfromAlert'), {
+    format: 'YYYY-MM-DD',
+});
+jSuites.calendar(document.getElementById('calendartoAlert'), {
+    format: 'YYYY-MM-DD',
+});
+</script>
 @endsection

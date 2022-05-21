@@ -41,6 +41,12 @@ Route::get('/alert', [App\Http\Controllers\AlertController::class, 'index'])->na
 Route::get('/location', [App\Http\Controllers\LocationController::class, 'index'])->name('location');
 Route::get('/import', [App\Http\Controllers\ImportController::class, 'index'])->name('import');
 Route::get('/location-detail', [App\Http\Controllers\LocationController::class, 'detail'])->name('location-detail');
+Route::get('/user', [App\Http\Controllers\UserController::class, 'index'])->name('user');
+Route::get('/usergroup', [App\Http\Controllers\UsergroupController::class, 'index'])->name('user_group');
+Route::get('/permission', [App\Http\Controllers\PermissionController::class, 'index'])->name('permission');
+Route::get('/configuration', [App\Http\Controllers\ConfigurationController::class, 'index'])->name('configuration');
+Route::get('/support', [App\Http\Controllers\SupportController::class, 'index'])->name('support');
+Route::get('/login', [App\Http\Controllers\LoginController::class, 'index'])->name('login');
 
 Route::get('/manage', [App\Http\Controllers\StoreController::class, 'manage'])->name('manage');
 Route::get('/store-detail', [App\Http\Controllers\StoreController::class, 'detail'])->name('store-detail');

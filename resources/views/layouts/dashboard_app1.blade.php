@@ -23,10 +23,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/ionicons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/plugins.bundle.css') }}" rel="stylesheet" >
-    <link href="{{ asset('css/dashboard_app.css') }}" rel="stylesheet">
     @yield('styles')
 </head>
-<body>
+<body style="background : linear-gradient(to bottom, #F1F7F8 0%, #F6F3F5 100%);">
     <div id="app">
         <main class="">
             @yield('content')
