@@ -226,11 +226,15 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-success identify-btn">IDENTIFY</button>
+                        <button class="btn btn-success identify-btn"><img class="support-img mx-3 high-lignt-icon" src="images/source_img/flashlight-48.png" />TOGGLE HIGHLIGHT</button>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
-                    
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-9">
+                            <button class="btn btn-success verify_btn">VERIFY</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <form action="" method="POST" enctype="multipart/form-data">
@@ -296,7 +300,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-success identify-btn">IDENTIFY</button>
+                        <button class="btn identify-btn"><img class="support-img mx-3 high-lignt-icon" src="images/source_img/flashlight-48.png" />TOGGLE HIGHLIGHT</button>
                     </div>
                 </div>
             </div>

@@ -77,6 +77,47 @@
                             <img class="support-img" src="images/source_img/comment.svg" />
                         </a>
                     </li>
+                    <li>
+                        <a href="#" class="nav-link" data-name="men_users">
+                            <div class="d-flex">
+                                <img class="support-img" src="images/source_img/setting-svgrepo-com.svg" />
+                                <p>Setting</p>
+                            </div>
+                            <img class="support-img" src="images/source_img/comment.svg" />
+                        </a>
+                    </li>
+                    <li class="ml-5">
+                        <a href="{{ route('user') }}" class="nav-link" data-name="men_users">
+                            <div class="d-flex">
+                                <img class="support-img" src="images/source_img/user.svg" />
+                                <p>User</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ml-5">
+                        <a href="{{ route('user_group') }}" class="nav-link" data-name="men_users">
+                            <div class="d-flex">
+                                <img class="support-img" src="images/source_img/users.svg" />
+                                <p>Group of Users</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ml-5">
+                        <a href="{{ route('permission') }}" class="nav-link" data-name="men_users">
+                            <div class="d-flex">
+                                <img class="support-img" src="images/source_img/user_permission.svg" />
+                                <p>Access Permissions</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="ml-5">
+                        <a href="{{ route('configuration') }}" class="nav-link" data-name="men_users">
+                            <div class="d-flex">
+                                <img class="support-img" src="images/source_img/configuration.png" />
+                                <p>Configuration</p>
+                            </div>
+                        </a>
+                    </li>
                     <!-- <li>
                         <a href="{{ route('home') }}" class="nav-link" data-name="men_users">
                             <div class="d-flex">
@@ -86,7 +127,7 @@
                             <img class="support-img" src="images/source_img/three-line.svg" />
                         </a>
                     </li> -->
-                    <li>
+                    <!-- <li>
                         <a href="{{ route('stores') }}" class="nav-link" data-name="men_users">
                             <div class="d-flex">
                                 <img class="support-img" src="images/source_img/shopping-basket.svg" />
@@ -94,7 +135,7 @@
                             </div>
                             <img class="support-img" src="images/source_img/comment.svg" />
                         </a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="{{ route('poi') }}" class="nav-link" data-name="men_users">
                             <div class="d-flex">
@@ -257,33 +298,36 @@
                                 <p class="ft-12">You lost $2,597.46 more than last month</p>
                             </div>
                         </div> -->
-                        <div class="col-md-3">
-                            <div class="total-matches out-line">
-                                <div class="d-flex justify-content-between">
-                                    <a class="ft-general" href="{{ route('total-matches') }}">Camera Streams</a>
+                        <div class="col-md-4">
+                            <div class="row total-matches out-line mx-0">
+                                <div class="col-6 p-0 m-0">
+                                <img class="dashboard_mainIcon" src="https://img.freepik.com/free-vector/cctv-icon-vector-security-camera-color-flat-symbol_574806-366.jpg" />
                                 </div>
-                                <div class="d-flex">
-                                    <p class="ft-25-b pl-5">324</p>
+                                <div class="col-6">
+                                    <a class="ft-general" href="#">Camera Streams</a>
+                                    <p class="ft-25-b">324</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="total-matches out-line">
-                                <div class="d-flex justify-content-between">
-                                    <a class="ft-general" href="{{ route('total-matches') }}">Locations Online/Offline</a>
+                            <div class="row total-matches out-line mx-0">
+                                <div class="col-4 p-0 m-0">
+                                    <img class="dashboard_mainIcon" src="images/source_img/location.png" />
                                 </div>
-                                <div class="d-flex">
-                                    <p class="ft-25-b pl-5">324/123</p>
+                                <div class="col-8">
+                                    <a class="ft-general" href="#">Locations Online/Offline</a>    
+                                    <p class="ft-25-b">324/123</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="total-matches out-line">
-                                <div class="d-flex justify-content-between">
-                                    <a class="ft-general" href="{{ route('total-matches') }}">Map with locations Online/Offline</a>
+                            <div class="row total-matches out-line mx-0">
+                                <div class="col-4 p-0 m-0">
+                                    <img class="dashboard_mainIcon" src="images/source_img/map.png" />
                                 </div>
-                                <div class="d-flex">
-                                    <p class="ft-25-b pl-5">324/234</p>
+                                <div class="col-8">
+                                    <a class="ft-general" href="{{ route('total-matches') }}">Map Online/Offline</a>    
+                                    <p class="ft-25-b">324/234</p>
                                 </div>
                             </div>
                         </div>
@@ -323,7 +367,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-5">
+                <div class="col-12 col-md-5">    
                     <div class="row mt-3">
                         <div class="col-md-12">
                             <div class="verbal-abuse out-line">
@@ -354,6 +398,33 @@
                                     <p class="percent-stores bg-none">+15%</p>
                                 </div>
                                 <p class="ft-12">Rolling total this week</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <div class="verbal-abuse out-line">
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <p class="jeng-zhi">#</p>
+                                <div class="ml-2">
+                                    <p class="ft-20">Faces Processed</p>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="dropdown1">
+                                    <button class="dropbtn1" style="border-left: 1px solid black;" > <img class="support-img" src="images/source_img/search.svg" /> Select Date <img class="support-img" src="images/source_img/arrow-bottom.svg" /></button>
+                                    <div class="dropdown-content1">
+                                        <a href="#" onclick="select_face_date(1)">last 24 hour</a>
+                                        <a href="#">last 7 days</a>
+                                        <a href="#">last calendar week</a>
+                                        <a href="#">last 30 days</a>
+                                        <a href="#">last calendar month</a>
+                                        <a href="#">select start/end dates</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
